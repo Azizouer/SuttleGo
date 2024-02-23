@@ -964,6 +964,16 @@ a:focus {
   background: #f3c93e;
 }
 
+@media screen and (max-width: 600px) {
+  .navbar a {
+    font-size: 25px;
+    margin-right: 10px;
+  }
+  .navbar {
+    background-color: white;
+    margin-top: 20px;
+  }
+}
 
 /**
 
