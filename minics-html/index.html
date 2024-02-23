@@ -162,30 +162,39 @@
 </header><!-- End Header -->
 
 <script>
-
-  function toggleMenu() {
+  document.addEventListener("DOMContentLoaded", function () {
     var menu = document.getElementById("menu");
     var menuIcon = document.querySelector(".menu-icon");
     var closeBtn = document.querySelector(".close-btn");
 
-    if (menu.style.display === 'none' || menu.style.display === '') {
-      menu.style.display = 'flex';
-      menu.style.marginTop = '300px';
-      menu.style.maxHeight = '200px';
-      menu.style.height = '200px';
-      menu.style.fontSize = '200px';
-      menuIcon.style.display = 'none';
-      closeBtn.style.display = 'block';
-    } else {
-      menu.style.display = 'none';
-      menu.style.marginTop = '0';
-      menu.style.height = 'auto';
-      menu.style.fontSize = '';
-      menuIcon.style.display = 'block';
-      closeBtn.style.display = 'none';
+    function toggleMenu() {
+      if (menu.style.display === 'none' || menu.style.display === '') {
+        menu.style.display = 'flex';
+        menu.style.marginTop = '300px';
+        menu.style.maxHeight = '200px';
+        menu.style.height = '200px';
+        menu.style.fontSize = '200px';
+        menuIcon.style.display = 'none';
+        closeBtn.style.display = 'block';
+      } else {
+        menu.style.display = 'none';
+        menu.style.marginTop = '0';
+        menu.style.height = 'auto';
+        menu.style.fontSize = '';
+        menuIcon.style.display = 'block';
+        closeBtn.style.display = 'none';
+      }
     }
-  }
 
+    menuIcon.addEventListener("click", function () {
+      toggleMenu();
+    });
+
+    closeBtn.addEventListener("click", function (event) {
+      event.preventDefault();
+      toggleMenu();
+    });
+  });
 </script>
 
 
@@ -194,206 +203,209 @@
 
 
 
-    <div class="hero_area">
-    <!-- end header section -->
-    <!-- slider section -->
-    <section class="slider_section ">
-      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="detail-box">
-                    <h1>
-                      Une seule marque pour plusieurs services:
-                    </h1>
-                    <h2 style="color: #383838">
-                      Le challenge gagnant
-                    </h2>
-                  </div>
+
+
+
+<div class="hero_area">
+  <!-- end header section -->
+  <!-- slider section -->
+  <section class="slider_section ">
+    <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="container ">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="detail-box">
+                  <h1>
+                    Une seule marque pour plusieurs services:
+                  </h1>
+                  <h2 style="color: #383838">
+                    Le challenge gagnant
+                  </h2>
                 </div>
-                <div class="col-md-6">
-                  <div class="img-box">
-                    <img src="images/transporteur.jpeg" alt="" style="border-radius: 5px">
-                  </div>
+              </div>
+              <div class="col-md-6">
+                <div class="img-box">
+                  <img src="images/transporteur.jpeg" alt="" style="border-radius: 5px">
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
-    </section>
-    <!-- end slider section -->
-    </div>
 
-
-  <!-- product section -->
-
-  <section class="product_section layout_padding" id="offre" style="padding-top: 0px;">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-            <div class="img-box" style="background-color: white">
-              <img src="images/1(3).png" alt="" style="filter: drop-shadow(5px 8px 8px #a2a2a2);" class="azerty">
-            </div>
-            <div class="detail-box" style="text-align: center">
-              <h5>
-                <strong style="color: #3a4468">
-                  Chauffeur
-                </strong>
-              </h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-            <div class="img-box" style="background-color: white">
-              <img src="images/2(3).png" alt="" style="filter: drop-shadow(5px 8px 8px #a2a2a2);">
-            </div>
-            <div class="detail-box" style="text-align: center">
-              <h5>
-                <strong style="color: #3a4468">
-                  Agence de voyage
-                </strong>
-              </h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="box">
-            <div class="img-box" style="background-color: white">
-              <img src="images/3(3).png" alt="" style="filter: drop-shadow(5px 8px 8px #a2a2a2);">
-            </div>
-            <div class="detail-box" style="text-align: center">
-              <h5>
-                <strong style="color: #3a4468">
-                  Hotel
-                </strong>
-              </h5>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
-
-  <!-- end product section -->
-
-
-    <div class="checklist" id="solution">
-      <div class="checklist-item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="100" fill="currentColor" class="bi bi-check-square-fill" viewBox="0 0 16 16" style="color: #3a4468; margin-right: 20px">
-          <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"/>
-        </svg>
-        <h5>Vous souhaitez enrichir votre offre par le service du transfert aéroportuaire ?</h5>
-      </div>
-      <div class="checklist-item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="100" fill="currentColor" class="bi bi-check-square-fill" viewBox="0 0 16 16" style="color: #3a4468; margin-right: 20px">
-          <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"/>
-        </svg>
-        <h5>Vous préférez vendre nos services avec les couleurs de votre marque ?</h5>
-      </div>
-      <div class="checklist-item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="100" fill="currentColor" class="bi bi-check-square-fill" viewBox="0 0 16 16" style="color: #3a4468; margin-right: 20px">
-          <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"/>
-        </svg>
-        <h5>Vous voulez être en capacité de créer votre propre réseau de revendeurs ?</h5>
-      </div>
-    </div>
+  <!-- end slider section -->
+</div>
 
 
+<!-- product section -->
 
-
-
-
-
-
-
-
-    <br><br><br><br><br><br>
-    <div class="solution">
-      <div class="container" style="margin-bottom: 20px">
-        <div class="heading_container heading_center">
-          <h2 style="color: #3a4468">
-            Nous disposons de la solution qui vous convient
-          </h2>
-        </div>
-      </div>
-      <div class="item">
-        <h2>01</h2>
-        <div class="content">
-          <h3>Toutes les variétés des services de transfert aéroportuaire en un seul endroit :</h3>
-          <ul class="default-ul-list-style">
-            <li>Offres de transfert destinées aux individuels et aux groupes.</li>
-            <li>Transfert privé et Navettes partagées de porte à porte.</li>
-            <li>Disponibilité de toute taille et de toute gamme de confort des véhicules.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="item">
-        <h2>02</h2>
-        <div class="content">
-          <h3>Interfaces de vente attractives et personnalisées :</h3>
-          <ul class="default-ul-list-style">
-            <li>Site web dédié, doté d’une charte graphique personnalisée.</li>
-            <li>Affichage des disponibilités en temps réel.</li>
-            <li>Parcours de réservation facile et intuitif.</li>
-            <li>Tarification instantanée avec commission incluse.</li>
-            <li>Personnalisation des tarifs avec contrôle des marges financières supplémentaires.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="item">
-        <h2>03</h2>
-        <div class="content">
-          <h3>Plusieurs canaux de vente et différents types de business :</h3>
-          <ul class="default-ul-list-style">
-            <li>Ventre directe au grand public ou via des intermédiaires.</li>
-            <li>Possibilité de création de comptes professionnels au bénéfice des tiers.</li>
-            <li>Possibilité de création de réseau de revendeurs en ligne.</li>
-            <li>Bénéfice d’un système de gestion des commissions des partenaires.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-
-
-
-    <h2 style="text-align: center; color: #3a4468" id="reason">
-      <strong>Pourquoi nous choisir?</strong>
-    </h2>
-    <section class="about_section" style="background-color: white; width: 90%; margin: auto">
-
-      <div class="container-fluid  ">
-        <div class="row">
-
-          <div class="col-md-6 px-0" style="margin: auto; padding-top: 30px; padding-bottom: 30px">
-            <div class="img-box">
-              <h5 style="color: rgb(55, 51, 134); background-color: rgb(252,245,142); padding: 20px">
-                <b>Partenariat axé sur la satisfaction client</b>
-              </h5>
-              <h5 style="color: rgb(55, 51, 134); background-color: rgb(83,133,201); padding: 20px">
-                <b>Amélioration garantie de votre chiffre d’Affaires</b>
-              </h5>
-              <h5 style="color: rgb(55, 51, 134); background-color: rgb(12, 192, 223); padding: 20px">
-                <b>Gestion exclusivement en ligne</b>
-              </h5>
-              <h5 style="color: rgb(55, 51, 134); background-color: rgb(243,238,150); padding: 20px">
-                <b>Zéro code de développent</b>
-              </h5>
-              <h5 style="color: rgb(55, 51, 134); background-color: rgb(106,123,185); padding: 20px">
-                <b>Zéro frais requis</b>
-              </h5>
-            </div>
+<section class="product_section layout_padding" id="offre" style="padding-top: 0px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-lg-4">
+        <div class="box">
+          <div class="img-box" style="background-color: white">
+            <img src="images/1(3).png" alt="" style="filter: drop-shadow(5px 8px 8px #a2a2a2);" class="azerty">
+          </div>
+          <div class="detail-box" style="text-align: center">
+            <h5>
+              <strong style="color: #3a4468">
+                Chauffeur
+              </strong>
+            </h5>
           </div>
         </div>
       </div>
-    </section>
+      <div class="col-sm-6 col-lg-4">
+        <div class="box">
+          <div class="img-box" style="background-color: white">
+            <img src="images/2(3).png" alt="" style="filter: drop-shadow(5px 8px 8px #a2a2a2);">
+          </div>
+          <div class="detail-box" style="text-align: center">
+            <h5>
+              <strong style="color: #3a4468">
+                Agence de voyage
+              </strong>
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <div class="box">
+          <div class="img-box" style="background-color: white">
+            <img src="images/3(3).png" alt="" style="filter: drop-shadow(5px 8px 8px #a2a2a2);">
+          </div>
+          <div class="detail-box" style="text-align: center">
+            <h5>
+              <strong style="color: #3a4468">
+                Hotel
+              </strong>
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end product section -->
+
+
+<div class="checklist" id="solution">
+  <div class="checklist-item">
+    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="100" fill="currentColor" class="bi bi-check-square-fill" viewBox="0 0 16 16" style="color: #3a4468; margin-right: 20px">
+      <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"/>
+    </svg>
+    <h5>Vous souhaitez enrichir votre offre par le service du transfert aéroportuaire ?</h5>
+  </div>
+  <div class="checklist-item">
+    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="100" fill="currentColor" class="bi bi-check-square-fill" viewBox="0 0 16 16" style="color: #3a4468; margin-right: 20px">
+      <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"/>
+    </svg>
+    <h5>Vous préférez vendre nos services avec les couleurs de votre marque ?</h5>
+  </div>
+  <div class="checklist-item">
+    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="100" fill="currentColor" class="bi bi-check-square-fill" viewBox="0 0 16 16" style="color: #3a4468; margin-right: 20px">
+      <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"/>
+    </svg>
+    <h5>Vous voulez être en capacité de créer votre propre réseau de revendeurs ?</h5>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br>
+<div class="solution">
+  <div class="container" style="margin-bottom: 20px">
+    <div class="heading_container heading_center">
+      <h2 style="color: #3a4468">
+        Nous disposons de la solution qui vous convient
+      </h2>
+    </div>
+  </div>
+  <div class="item">
+    <h2>01</h2>
+    <div class="content">
+      <h3>Toutes les variétés des services de transfert aéroportuaire en un seul endroit :</h3>
+      <ul class="default-ul-list-style">
+        <li>Offres de transfert destinées aux individuels et aux groupes.</li>
+        <li>Transfert privé et Navettes partagées de porte à porte.</li>
+        <li>Disponibilité de toute taille et de toute gamme de confort des véhicules.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="item">
+    <h2>02</h2>
+    <div class="content">
+      <h3>Interfaces de vente attractives et personnalisées :</h3>
+      <ul class="default-ul-list-style">
+        <li>Site web dédié, doté d’une charte graphique personnalisée.</li>
+        <li>Affichage des disponibilités en temps réel.</li>
+        <li>Parcours de réservation facile et intuitif.</li>
+        <li>Tarification instantanée avec commission incluse.</li>
+        <li>Personnalisation des tarifs avec contrôle des marges financières supplémentaires.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="item">
+    <h2>03</h2>
+    <div class="content">
+      <h3>Plusieurs canaux de vente et différents types de business :</h3>
+      <ul class="default-ul-list-style">
+        <li>Ventre directe au grand public ou via des intermédiaires.</li>
+        <li>Possibilité de création de comptes professionnels au bénéfice des tiers.</li>
+        <li>Possibilité de création de réseau de revendeurs en ligne.</li>
+        <li>Bénéfice d’un système de gestion des commissions des partenaires.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+<h2 style="text-align: center; color: #3a4468" id="reason">
+  <strong>Pourquoi nous choisir?</strong>
+</h2>
+<section class="about_section" style="background-color: white; width: 90%; margin: auto">
+
+  <div class="container-fluid  ">
+    <div class="row">
+
+      <div class="col-md-6 px-0" style="margin: auto; padding-top: 30px; padding-bottom: 30px">
+        <div class="img-box">
+          <h5 style="color: rgb(55, 51, 134); background-color: rgb(252,245,142); padding: 20px">
+            <b>Partenariat axé sur la satisfaction client</b>
+          </h5>
+          <h5 style="color: rgb(55, 51, 134); background-color: rgb(83,133,201); padding: 20px">
+            <b>Amélioration garantie de votre chiffre d’Affaires</b>
+          </h5>
+          <h5 style="color: rgb(55, 51, 134); background-color: rgb(12, 192, 223); padding: 20px">
+            <b>Gestion exclusivement en ligne</b>
+          </h5>
+          <h5 style="color: rgb(55, 51, 134); background-color: rgb(243,238,150); padding: 20px">
+            <b>Zéro code de développent</b>
+          </h5>
+          <h5 style="color: rgb(55, 51, 134); background-color: rgb(106,123,185); padding: 20px">
+            <b>Zéro frais requis</b>
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
@@ -518,29 +530,29 @@
 
 
 
-  <!-- footer section -->
-  <footer class="footer_section">
-    <div class="container">
-      <p>
-        &copy; <span id="displayYear"></span> Tous droits réservés par Shuttlego
-      </p>
-    </div>
-  </footer>
-    <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">
-      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-arrow-up-square-fill" viewBox="0 0 16 16">
-      <path d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0"/>
-    </svg>
-    </button>
+<!-- footer section -->
+<footer class="footer_section">
+  <div class="container">
+    <p>
+      &copy; <span id="displayYear"></span> Tous droits réservés par Shuttlego
+    </p>
+  </div>
+</footer>
+<button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-arrow-up-square-fill" viewBox="0 0 16 16">
+    <path d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0"/>
+  </svg>
+</button>
 
-    <script src="script.js"></script>
-  <!-- footer section -->
+<script src="script.js"></script>
+<!-- footer section -->
 
-  <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
-  <!-- custom js -->
-  <script src="js/custom.js"></script>
+<!-- jQery -->
+<script src="js/jquery-3.4.1.min.js"></script>
+<!-- bootstrap js -->
+<script src="js/bootstrap.js"></script>
+<!-- custom js -->
+<script src="js/custom.js"></script>
 
 
 </body>
